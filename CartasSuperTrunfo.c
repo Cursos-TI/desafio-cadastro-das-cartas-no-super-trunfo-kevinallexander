@@ -10,9 +10,9 @@ int main() {
     
     char estado[3], estado2[3], codigoDaCarta[4], codigoDaCarta2[4], nomeDaCidade[100], nomeDaCidade2[100];
     int populacao, pontosTuristicos, populacao2, pontosTuristicos2;
-    float area, area2, pib, pib2;
+    float area, area2, densidade, densidade2, pib, pib2, pibPerCapita, pibPerCapita2;
 
-    // Registro da Carta #1
+    // Carta 1
 
     printf("Registrando a primeira carta. Vamos Começar!\n");
     
@@ -37,7 +37,10 @@ int main() {
     printf ("Informe o PIB:");
     scanf ("%f", &pib);
 
-    // Registro da Carta #2
+    densidade = (float) populacao / area;
+    pibPerCapita = (pib * 1000000000.0f) / (float) populacao;
+
+    // Carta 2
 
     printf("Primeira carta registrada com sucesso! Registrando a segunda carta. Vamos lá!\n");
 
@@ -62,13 +65,21 @@ int main() {
     printf ("Informe o PIB:");
     scanf ("%f", &pib2);
 
+    densidade2 = (float) populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000.0f) / (float) populacao2;
+
     printf ("Tudo pronto! As duas cartas foram registradas com sucesso!\n");
 
     printf ("Carta Nº 1 - %s, %s, %s\n", nomeDaCidade, estado, codigoDaCarta);
     printf ("Dados -> Habitantes: %d | Area: %f | PIB: %f | Pontos Turísticos: %d\n", populacao, area, pib, pontosTuristicos);
+    printf ("Mais informações -> Densidade Populacional: %.2f | PIB Per Capta: %.2f\n", densidade, pibPerCapita);
 
     printf ("Carta Nº 2 - %s, %s, %s\n", nomeDaCidade2, estado2, codigoDaCarta2);
     printf ("Dados -> Habitantes: %d | Area: %f | PIB: %f | Pontos Turísticos: %d\n", populacao2, area2, pib2, pontosTuristicos2);
+    printf ("Mais informações -> Densidade Populacional: %.2f | PIB Per Capta: %.2f\n", densidade2, pibPerCapita2);
+
+    // OBSERVAÇÃO >>>> PIB e PIB per capita são float por exigência da questão.
+    // Isso causa pequenas diferenças de precisão nos valores calculados.
 
     return 0;
 }
