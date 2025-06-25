@@ -103,7 +103,19 @@ int main() {
     printf ("Dados -> Habitantes: %d | Area: %f | PIB: %f | Pontos Turísticos: %d\n", populacao2, area2, pib2, pontosTuristicos2);
     printf ("Mais informações -> Densidade Populacional: %.2f | PIB Per Capta: %.2f\n", densidade2, pibPerCapita2);
 
-    printf (" *** > CAMPO DE BATALHA < ***\n");
+    printf (" *** > COMPARANDO DADOS < ***\n");
+
+    // Usando if-else
+
+    if (SuperPoder > SuperPoder2) {
+        printf ("Parabéns!! A carta número 1 é a grande campeã da disputa!\n");
+    } else {
+        printf ("Parabéns!! A carta número 2 é a grande campeã da disputa!\n");
+    }
+
+    // Formato anterior
+
+    /*
 
     printf ("Disputa entre Carta %s (%s) e %s (%s)\n", nomeDaCidade, estado, nomeDaCidade2, estado2);
 
@@ -120,6 +132,8 @@ int main() {
     printf ("Densidade - %s (%.2f) x %s (%.2f) ### Parabéns! %d\n", nomeDaCidade, densidade, nomeDaCidade2, densidade, comparandoDensidade);
 
     printf ("### SUPER PODER! ### - %s (%.2f) x %s (%.2f) ### Parabéns! %d\n", nomeDaCidade, SuperPoder, nomeDaCidade2, SuperPoder2, comparandoSuperPoder);
+
+    */
 
     // OBSERVAÇÃO >>>> PIB e PIB per capita são float por exigência da questão.
     // Isso causa pequenas diferenças de precisão nos valores calculados.
